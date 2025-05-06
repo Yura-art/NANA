@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyMovement : MonoBehaviour, IMovementSystem
+public class FlyMovement : IMovementSystem
 {
-    Transform target;
-    private float speed;
-    public float Speed => speed;
 
-    public void Move()
+    [SerializeField] Transform target;
+
+    private float speed;
+
+    public float Speed { get => speed; set => speed = value; }
+
+    public void Move(Transform characterT)
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position,speed * Time.deltaTime);
+
+        if (target != null)
+        {
+            characterT.position = Vector3.MoveTowards(characterT.position, target.position, Speed * Time.deltaTime);
+
+        }
     }
 
     public void SetTarget(Transform target)
     {
+
         this.target = target;
     }
 }

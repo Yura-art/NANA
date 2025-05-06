@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    IMovementSystem movement;
+    protected IMovementSystem movement;
 
-    public void InitializeCharacter
+    public void Initializedcharacter(IMovementSystem movementSystem)
+    {
+        movement = movementSystem;
+    }
 
     private void Update()
     {
-        if (movement == null)
+
+        if (movement != null)
         {
             movement.Move(transform);
+
         }
-       
     }
 }
