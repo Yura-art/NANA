@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IMovementSystem
+public interface IDamageable
 {
 
     public float Speed { get; set; }

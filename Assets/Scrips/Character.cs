@@ -5,8 +5,9 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     protected IMovementSystem movement;
+    protected IAttackSystem attack;
 
-    public void Initializedcharacter(IMovementSystem movementSystem)
+    public void Initializedcharacter(IMovementSystem movementSystem, IAttackSystem attackSystem)
     {
         movement = movementSystem;
     }

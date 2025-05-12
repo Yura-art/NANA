@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealSystem : MonoBehaviour
+public class HealthSistem : MonoBehaviour
 {
-    float currentHeal;
-    float maxHeal;
+    float currentHealth;
+    float maxhealth;
 
     private void Start()
     {
-        currentHeal = maxHeal;
+        currentHealth = maxhealth;
     }
 
-    public void ReciveDamage(float damage)
+    public void RecieveDamage(float damage)
     {
-        currentHeal -= damage;
+        currentHealth -= maxhealth;
 
-        if (currentHeal <= 0)
+        if (currentHealth == 0)
         {
             Destroy(gameObject);
         }
     }
 
-    public void ReciveHeal(float heal)
+    public void recieveHealth(float heal)
     {
-        currentHeal += heal;
+        currentHealth += heal;
 
-        if (currentHeal > maxHeal)
+        if (currentHealth > maxhealth)
         {
-            currentHeal = maxHeal;
+            currentHealth = maxhealth;
         }
     }
 }
