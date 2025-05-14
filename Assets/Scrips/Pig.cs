@@ -12,12 +12,15 @@ public class Pig : Character
     [SerializeField] float speed;
     [SerializeField] Transform target;
     [SerializeField] NavMeshAgent Nav;
+
+    [SerializeField] Material newMaterial;
+    [SerializeField] List<MeshRenderer> mesh;
     private void Awake()
     {
         GroundMovement ground = new GroundMovement(Nav);
         ground.Speed = speed;
 
-        Initializedcharacter(ground, new RangeAttackSystem(pivot, power));
+        Initializedcharacter(ground, new RangeAttackSystem(pivot, power), new TransformByColor(newMaterial, mesh));
     }
     private void Start()
     {
